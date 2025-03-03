@@ -116,10 +116,47 @@ button {
   border: 3px solid orange;
 }
 .container-fluent {
+  margin: 0 auto;
   max-width: 1440px;
   padding-left: 32px;
   padding-right: 40px;
 }
 /* header */
-
+header > .container-fluent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 85px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.logo {
+  display: block;
+  width: 109px;
+  height: 36px;
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.28;
+  letter-spacing: -1.05px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 33px;
+  opacity: .75;
+}
+.menu__item {
+  font-weight: 700;
+  font-size: 0.68rem;
+  line-height: 2.27;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
 /* end-header */
+
+
+
