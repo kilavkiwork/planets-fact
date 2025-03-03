@@ -1,13 +1,18 @@
 :root {
   /* fonts */
-  --main-font: 'Lexend Deca';
-  --secondary-font: 'Big Shoulders Display';
+  --main-font: 'Spartan';
+  --secondary-font: 'Antonio';
   --font-size: 16px;
   /* colors */
-  --primary-color: #733fc8;
-  --secondary-color: #48556a;
+  --mercury-color: #419ebb;
+  --venus-color: #eda249;
+  --earth-color: #6d2ed5;
+  --mars-color: #d14c32;
+  --jupiter-color: #d83a34;
+  --saturn-color: #cd5120;
+  --uranus-color: #1ec1a2;
   --white: #fff;
-  --black: #000;
+  --black: #070724;
   /* settings */
   --padding: 20px;
   --container: 1170px;
@@ -34,13 +39,12 @@ body {
 
 body {
   font-family: var(--main-font);
-  font-size: var(--font-size);
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--black);
-  background-color: var(--body-bg);
+  font-size: 0.875rem;
+  line-height: 1.78;
+  color: var(--white);
+  background-color: var(--black);
 }
 
 h1,
