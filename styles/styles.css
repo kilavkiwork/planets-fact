@@ -17,7 +17,7 @@
   --padding: 40px;
   --container: 1110px;
   --body-bg: #f3f3f3;
-  --anime: 0.5s, ease;
+  --anime: 0.5s ease-in-out;
 }
 
 *,
@@ -126,7 +126,8 @@ header > .container-fluent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 85px;
+  /* height: 86px; */
+  min-height: 86px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .logo {
@@ -145,18 +146,44 @@ header > .container-fluent {
 .menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   column-gap: 33px;
-  opacity: .75;
+  /* border: 1px solid salmon; */
 }
 .menu__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 86px;
   font-weight: 700;
   font-size: 0.68rem;
   line-height: 2.27;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--white);
+  opacity: 0.75;
+  transition: opacity var(--anime);
+}
+.menu__item:hover {
+  opacity: 1;
+}
+.menu__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--mercury-color);
+  opacity: 0;
+  transition: opacity var(--anime);
+}
+.menu__item:hover::before {
+  opacity: 1;
+}
+.burger {
+  display: none;
+  opacity: 0.25;
 }
 /* end-header */
-
-
-
