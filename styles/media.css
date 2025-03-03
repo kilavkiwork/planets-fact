@@ -1,16 +1,29 @@
 @media (max-width: 768px) {
   header > .container-fluent {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 40px;
     min-height: 160px;
   }
+  .menu__item {
+    height: auto;
+  }
 }
 
-/* mobile first */
-@media (min-width: 620px) {
+@media (max-width: 620px) {
   header > .container-fluent {
     display: none;
   }
+}
+
+
+
+
+
+
+
+/* mobile first */
+@media (min-width: 768px) {
 }
