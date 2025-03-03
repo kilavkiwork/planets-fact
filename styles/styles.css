@@ -14,8 +14,8 @@
   --white: #fff;
   --black: #070724;
   /* settings */
-  --padding: 20px;
-  --container: 1170px;
+  --padding: 40px;
+  --container: 1110px;
   --body-bg: #f3f3f3;
   --anime: 0.5s, ease;
 }
@@ -44,7 +44,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.78;
   color: var(--white);
-  background-color: var(--black);
+  background: var(--black) url('../assets/images/background-stars.svg')
+    center/cover no-repeat;
 }
 
 h1,
@@ -114,8 +115,11 @@ button {
 
   border: 3px solid orange;
 }
-
-.img-demo {
-  width: 100px;
-  height: 100px;
+.container-fluent {
+  max-width: 1440px;
+  padding-left: 32px;
+  padding-right: 40px;
 }
+/* header */
+
+/* end-header */
