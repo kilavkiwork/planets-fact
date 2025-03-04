@@ -1,4 +1,11 @@
 @media (max-width: 768px) {
+  :root {
+    --padding: 24px;
+  }
+  h1.title {
+    font-size: 3rem;
+    line-height:1.3x;
+  }
   header > .container-fluent {
     display: flex;
     flex-direction: column;
@@ -9,6 +16,29 @@
   }
   .menu__item {
     height: auto;
+  }
+  .hero > .container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 130px;
+    margin-top: 145px;
+  }
+  .planet {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .planet img {
+    width: 26.126vw;
+  }
+  .info {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .info > p {
+    padding-right: 0;
+  }
+  .buttons {
+    grid-column: 2 / 3;
+    grid-row: 2;
   }
 }
 
@@ -28,18 +58,45 @@
   .mobile {
     display: block;
   }
+  .hero > .container {
+    grid-template-columns: 1fr;
+    row-gap: 98px;
+    margin-top: 98px;
+  }
+  .buttons {
+    flex-direction: row;
+    margin-top: 0;
+    max-width: 100%;
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .buttons span {
+    display: none;
+  }
+  .btn {
+    flex: 1 1 33.33%;
+    justify-content: center;
+    padding: 0;
+    font-size: 0.562rem;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 1.93px;
+    border: none;
+    opacity: 0.5;
+  }
+  .planet {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .info {
+    grid-gap: 24px;
+    max-width: 100%;
+    text-align: center;
+    grid-row: 3;
+  }
 }
 
 /* mercury */
-
-
-
-
-
-
-
-
-
 
 /* mobile first */
 @media (min-width: 768px) {
