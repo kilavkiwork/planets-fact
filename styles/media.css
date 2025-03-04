@@ -1,7 +1,4 @@
 @media (max-width: 768px) {
-  :root {
-    --padding: 24px;
-  }
   h1.title {
     font-size: 3rem;
     line-height:1.3x;
@@ -18,8 +15,11 @@
     height: auto;
   }
   .hero > .container {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* grid-template-columns: 339px 281px; */
+    grid-template-columns: 1fr 281px;
     row-gap: 130px;
+    column-gap: 70px;
     margin-top: 145px;
   }
   .planet {
@@ -43,6 +43,9 @@
 }
 
 @media (max-width: 620px) {
+  :root {
+    --padding: 24px;
+  }
   header > .container-fluent {
     flex-direction: row;
     justify-content: space-between;
