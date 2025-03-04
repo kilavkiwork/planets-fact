@@ -162,7 +162,7 @@ header > .container-fluent {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--white);
-  opacity: .75;
+  opacity: 0.75;
   transition: opacity var(--anime);
 }
 .menu__item:hover {
@@ -182,7 +182,8 @@ header > .container-fluent {
 .menu__item:hover::before {
   opacity: 1;
 }
+.burger {
+  display: none;
+  opacity: 0.25;
+}
 /* end-header */
-
-
-
