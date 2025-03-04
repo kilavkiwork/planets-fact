@@ -1,7 +1,7 @@
 @media (max-width: 768px) {
   h1.title {
     font-size: 3rem;
-    line-height:1.3x;
+    line-height: 1.3x;
   }
   header > .container-fluent {
     display: flex;
@@ -39,6 +39,23 @@
   .buttons {
     grid-column: 2 / 3;
     grid-row: 2;
+  }
+  .fact {
+    padding: 16px 16px 20px;
+  }
+  .fact__heder {
+    font-size: 0.5rem;
+    line-height: 2;
+    letter-spacing: 0.727273px;
+  }
+  .fact__content {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    /* identical to box height */
+    letter-spacing: -0.9px;
+    text-transform: uppercase;
+
+    color: #ffffff;
   }
 }
 
@@ -96,6 +113,18 @@
     max-width: 100%;
     text-align: center;
     grid-row: 3;
+  }
+  .facts > .container {
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 28px;
+    margin-bottom: 48px;
+  }
+  .fact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 24px 14px;
   }
 }
 
