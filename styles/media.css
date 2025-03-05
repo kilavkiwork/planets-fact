@@ -72,16 +72,21 @@
   .nav {
     display: none;
   }
-  .burger {
+  .hamburger {
     display: block;
   }
   .mobile {
     display: block;
+    left: -100%;
+    transition: left 0.5s ease-out;
+  }
+  .mobile.active {
+    left: 0;
   }
   .hero > .container {
     grid-template-columns: 1fr;
     row-gap: 98px;
-    margin-top: 98px;
+    margin-top: 0;
   }
   .buttons {
     flex-direction: row;
