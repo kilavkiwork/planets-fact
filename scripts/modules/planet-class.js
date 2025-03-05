@@ -39,12 +39,25 @@ class Planet {
     }
   }
 
-  getContent(btnValue) {
-    document.querySelector('#content').textContent = this[btnValue]['content']
-    document.querySelector('#source').href = this[btnValue]['source']
+  addContent(btnValue) {
+    document.querySelector('#content').textContent = this[btnValue]['content'];
+    document.querySelector('#source').href = this[btnValue]['source'];
   }
-  
-//   
+
+  addImage(btnValue) {
+    let oldPath =
+      this.images[
+        btnValue === 'overview'
+          ? 'planet'
+          : btnValue === 'structure'
+          ? 'internal'
+          : btnValue
+      ];
+    let newPath = oldPath.replace('assets/', 'assets/images/');
+    document.querySelector('#planet').src = newPath;
+    console.log(newPath);
+  }
+  //
 }
 
 export { Planet };

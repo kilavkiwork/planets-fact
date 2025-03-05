@@ -26,17 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
       //
       const currentPlanet = createPlanet(data);
       const planet = new Planet(currentPlanet);
+      const currentBtn = planet.defineButton(buttons)
       planet.addName();
       planet.addRotation()
       planet.addRevolution()
       planet.addRadius()
       planet.addTemperature()
-      const currentBtn = planet.defineButton(buttons)
-      planet.getContent(currentBtn)
+      planet.addContent(currentBtn)
+      planet.addImage(currentBtn)
 
 
       // console.log(typeof currentBtn);
-      // console.log(currentPlanet);
+      console.log(currentPlanet);
       // testJson(data)
     } catch (error) {
       console.error('Помилка у "function loadJson()"', error);
