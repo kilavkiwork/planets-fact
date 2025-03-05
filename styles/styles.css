@@ -190,8 +190,11 @@ header > .container-fluent {
 }
 .hamburger {
   display: none;
+  padding: 16px;
+  padding-right: 0;
   opacity: 0.25;
   transition: opacity var(--anime);
+  cursor: pointer;
 }
 .hamburger.active {
   opacity: 1;
