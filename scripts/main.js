@@ -1,26 +1,43 @@
-import {mobileMenu, hamburger, activeMenu} from "./modules/active-menu.js";
-const jsonPath = '../assets/data/data.json'
-document.addEventListener('DOMContentLoaded', function () {
+import { mobileMenu, hamburger, activeMenu } from './modules/active-menu.js';
+import { bodyClass, testJson } from './modules/module.js';
+import { Planet } from './modules/planet-class.js';
+import { createPlanet } from './modules/current-planet.js';
 
+const jsonPath = '../assets/data/data.json';
+const buttons = document.querySelectorAll('button')
+
+// console.log(buttons);
+
+
+document.addEventListener('DOMContentLoaded', function () {
   // завантаження інформації для сайту
   async function loadJson(jsonFile) {
     try {
-      const response = await fetch(jsonFile)
-
+      //
+      const response = await fetch(jsonFile);
+      //
       if (!response.ok) {
-        throw new Error(`Помилка завантаження даних: ${response.status}`)
+        throw new Error(`Помилка завантаження даних: ${response.status}`);
       } else {
         console.log(response);
       }
-      
-      const data = await response.json()
+      //
+      const data = await response.json();
+      //
+      const currentPlanet = createPlanet(data);
+      const planet = new Planet(currentPlanet);
+      planet.addName();
+      planet.addRotation()
+      planet.addRevolution()
+      planet.addRadius()
+      planet.addTemperature()
+      const currentBtn = planet.defineButton(buttons)
+      planet.getContent(currentBtn)
 
-      
-      
-      
-      
-      
-      
+
+      // console.log(typeof currentBtn);
+      // console.log(currentPlanet);
+      // testJson(data)
     } catch (error) {
       console.error('Помилка у "function loadJson()"', error);
     }
@@ -28,8 +45,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // мобільне меню
   hamburger.addEventListener('click', activeMenu);
-  // 
-
+  //
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      buttons.forEach(button => button.classList.remove('active'))
+      event.target.classList.add('active')
+      loadJson(jsonPath)
+    })
+  })
+  
   // main
-  loadJson(jsonPath)
+  loadJson(jsonPath);
 });
