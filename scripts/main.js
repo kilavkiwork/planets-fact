@@ -1,16 +1,35 @@
+import {mobileMenu, hamburger, activeMenu} from "./modules/active-menu.js";
+const jsonPath = '../assets/data/data.json'
 document.addEventListener('DOMContentLoaded', function () {
-  const hamburger = document.querySelector('#hamburger');
-  const mobileMenu = document.querySelector('.mobile');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    if (mobileMenu.classList.contains('active')) {
-      document.body.style.overflow = 'hidden'; 
-    } else {
-      document.body.style.overflow = ''; 
+  // завантаження інформації для сайту
+  async function loadJson(jsonFile) {
+    try {
+      const response = await fetch(jsonFile)
+
+      if (!response.ok) {
+        throw new Error(`Помилка завантаження даних: ${response.status}`)
+      } else {
+        console.log(response);
+      }
+      
+      const data = await response.json()
+
+      
+      
+      
+      
+      
+      
+    } catch (error) {
+      console.error('Помилка у "function loadJson()"', error);
     }
-  });
+  }
+
+  // мобільне меню
+  hamburger.addEventListener('click', activeMenu);
+  // 
 
   // main
+  loadJson(jsonPath)
 });
