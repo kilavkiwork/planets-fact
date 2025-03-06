@@ -287,7 +287,8 @@ header > .container-fluent {
   bottom: 0;
   aspect-ratio: 163 / 189;
   width: auto;
-  max-width: 163px;
+  /* max-width: 163px; */
+  max-width: clamp(102px, 14.68vw, 163px);
 }
 .info {
   display: flex;
