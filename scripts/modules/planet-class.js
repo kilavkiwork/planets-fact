@@ -44,6 +44,19 @@ class Planet {
     document.querySelector('#source').href = this[btnValue]['source'];
   }
 
+  countImageSize(path) {
+    let img = new Image();
+    // img.src = path;
+    img.onload = () => {
+      document.documentElement.style.setProperty(
+        '--image-size',
+        `${img.width}px`
+      );
+    };
+    // Встановлюємо шлях до зображення
+    img.src = path;
+  }
+
   addImage(btnValue) {
     let oldPath =
       this.images[
@@ -54,13 +67,9 @@ class Planet {
           : btnValue
       ];
     let newPath = oldPath.replace('assets/', 'assets/images/');
+    this.countImageSize(newPath);
     document.querySelector('#planet').src = newPath;
-    let img = new Image();
-    img.src = newPath;
-    document.documentElement.style.setProperty(
-      '--image-size',
-      `${img.width}px`
-    );
+    // return newPath
   }
   //
 }
