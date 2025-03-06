@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
       planet.addTemperature()
       planet.addContent(currentBtn)
       planet.addImage(currentBtn)
-
+      planet.countImageSize()
 
       // console.log(typeof currentBtn);
       console.log(currentPlanet);
