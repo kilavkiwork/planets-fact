@@ -29,11 +29,8 @@
     width: 100%;
     max-width: calc(var(--image-size) / 1.576);
   }
-  .planet img#geology {
-    width: 25%;
-    border: 1px solid salmon;
-    /* max-width: calc(var(--image-size) / 1.576); */
-  }
+  /* .planet img#geology {
+  } */
   .info {
     grid-column: 1 / 2;
     grid-row: 2;
