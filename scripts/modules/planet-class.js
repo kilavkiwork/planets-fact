@@ -57,7 +57,11 @@ class Planet {
     img.src = path;
   }
 
-  addImage(btnValue) {
+  // addImageGeology(btnValue, path) {
+  //   if (btn)
+  // }
+
+  createPathToImage(btnValue) {
     let oldPath =
       this.images[
         btnValue === 'overview'
@@ -66,10 +70,33 @@ class Planet {
           ? 'internal'
           : btnValue
       ];
-    let newPath = oldPath.replace('assets/', 'assets/images/');
-    this.countImageSize(newPath);
-    document.querySelector('#planet').src = newPath;
-    // return newPath
+    return oldPath.replace('assets/', 'assets/images/');
+  }
+
+  addImage(btnValue) {
+    let newPath = this.createPathToImage(btnValue)
+    let imgPlanet = document.querySelector('img#planet')
+    let parentPlanets = document.querySelector('.planet')
+    let imgGeology = document.createElement('img');
+    imgGeology.setAttribute('id', 'geology');
+    let isImgGeology = document.querySelector('#geology')
+    
+    if (btnValue === 'geology') {
+      let geoPath = this.images['planet'].replace('assets/', 'assets/images/')
+      this.countImageSize(geoPath)
+      imgPlanet.src = geoPath;
+      imgGeology.src = newPath;
+      parentPlanets.insertAdjacentElement('beforeend', imgGeology)
+    } else {
+      if (isImgGeology) {
+        parentPlanets.removeChild(isImgGeology)
+      }
+      this.countImageSize(newPath);
+      imgPlanet.src = newPath;
+    }
+    
+
+    // this.addImageGeology(btnValue, newPath);
   }
   //
 }

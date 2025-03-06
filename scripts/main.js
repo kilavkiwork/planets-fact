@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!response.ok) {
         throw new Error(`Помилка завантаження даних: ${response.status}`);
       } else {
-        console.log(response);
+        // console.log(response);
       }
       //
       const data = await response.json();
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
       planet.addTemperature()
       planet.addContent(currentBtn)
       planet.addImage(currentBtn)
-      planet.countImageSize()
 
       // console.log(typeof currentBtn);
       console.log(currentPlanet);
