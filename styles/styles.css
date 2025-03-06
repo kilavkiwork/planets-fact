@@ -281,6 +281,13 @@ header > .container-fluent {
   max-width: var(--image-size);
 }
 .planet img#geology {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  aspect-ratio: 163 / 189;
+  width: auto;
+  max-width: 163px;
 }
 .info {
   display: flex;
