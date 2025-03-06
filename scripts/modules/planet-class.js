@@ -55,7 +55,12 @@ class Planet {
       ];
     let newPath = oldPath.replace('assets/', 'assets/images/');
     document.querySelector('#planet').src = newPath;
-    console.log(newPath);
+    let img = new Image();
+    img.src = newPath;
+    document.documentElement.style.setProperty(
+      '--image-size',
+      `${img.width}px`
+    );
   }
   //
 }

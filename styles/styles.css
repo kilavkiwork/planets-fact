@@ -20,6 +20,7 @@
   --container: 1110px;
   --body-bg: #f3f3f3;
   --anime: 0.3s ease-in-out;
+  --image-size: 290px;
 }
 
 *,
@@ -103,12 +104,6 @@ button {
 .wrapper > main {
   flex: 1 1 auto;
 }
-
-/* .container {
-  margin: 0 auto;
-  max-width: var(--container);
-  padding: 0 var(--padding);
-} */
 
 .container {
   margin: 0 auto;
@@ -269,18 +264,22 @@ header > .container-fluent {
 .hero > .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr) 350px;
-  grid-template-rows: auto;
+  /* grid-template-rows: auto; */
   margin-top: 126px;
 }
 .planet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  justify-items: center;
+  align-content: center;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
+  /* border: 1px solid forestgreen */
 }
-.planet img {
-  width: auto;
+.planet img#planet {
+  width: 100%;
+  max-width: var(--image-size);
+}
+.planet img#geology {
 }
 .info {
   display: flex;
