@@ -9,35 +9,12 @@ const rootColors = {
   '--neptune-color': '#497efa',
 };
 
-const menuItem = document.querySelectorAll('.menu__item');
-
-// function cc(menu__item) {
-
-// }
-
-function defineColors(event, eType) {
+function defineColors(event) {
   let color = `--${event.id}-color`;
-  // console.log(eType);
   document.documentElement.style.setProperty(
     '--current-color',
     rootColors[color]
   );
-
-  // if (eType === 'click') {
-  //   document.documentElement.style.setProperty(
-  //     '--current-color',
-  //     rootColors[color]
-  //   );
-  // }
-
-  // if (eType === 'mouseover') {
-  //   menuItem.forEach((item) => {
-  //     if (item.id === event.id) {
-  //       item.style.background = 'red';
-  //     }
-  //   });
-  //   // console.log(event.id);
-  // }
 }
 
 export { defineColors };
