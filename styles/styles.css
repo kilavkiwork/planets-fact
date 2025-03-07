@@ -21,7 +21,7 @@
   --body-bg: #f3f3f3;
   --anime: 0.3s ease-in-out;
   --image-size: 290px;
-  --current-color: var(--mercury-color)
+  --current-color: var(--mercury-color);
 }
 
 *,
@@ -47,6 +47,7 @@ body {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.785;
+  letter-spacing: 0.05em;
   color: var(--white);
   background: var(--black) url('../assets/images/background-stars.svg')
     center/cover no-repeat;
@@ -295,8 +296,9 @@ header > .container-fluent {
   /* align-items: flex-end; */
   grid-column: 3 / 4;
 }
-.info > p {
-  padding-right: 80px;
+.info p#content {
+  height: 150px;
+  /* padding-right: 80px; */
 }
 .info__link {
   position: relative;

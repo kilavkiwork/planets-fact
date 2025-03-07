@@ -14,20 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // завантаження інформації для сайту
   async function loadJson(jsonFile) {
     try {
-      //
       const response = await fetch(jsonFile);
       //
       if (!response.ok) {
         throw new Error(`Помилка завантаження даних: ${response.status}`);
-      } else {
-        // console.log(response);
-      }
+      } 
       //
       const data = await response.json();
-      //
       const currentPlanet = createPlanet(data);
       const planet = new Planet(currentPlanet);
       const currentBtn = planet.defineButton(buttons)
+      // 
       planet.addName();
       planet.addRotation()
       planet.addRevolution()
