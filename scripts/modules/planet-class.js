@@ -57,10 +57,6 @@ class Planet {
     img.src = path;
   }
 
-  // addImageGeology(btnValue, path) {
-  //   if (btn)
-  // }
-
   createPathToImage(btnValue) {
     let oldPath =
       this.images[

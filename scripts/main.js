@@ -2,10 +2,11 @@ import { mobileMenu, hamburger, activeMenu } from './modules/active-menu.js';
 import { bodyClass, testJson } from './modules/module.js';
 import { Planet } from './modules/planet-class.js';
 import { createPlanet } from './modules/current-planet.js';
+import { defineColors } from './modules/define-color.js';
 
 const jsonPath = '../assets/data/data.json';
 const buttons = document.querySelectorAll('button')
-
+const menu = document.querySelector('.menu')
 // console.log(buttons);
 
 
@@ -53,6 +54,17 @@ document.addEventListener('DOMContentLoaded', function () {
       loadJson(jsonPath)
     })
   })
+
+  menu.addEventListener('click', (e) => {
+    let event = e.target;
+    let eType = e.type
+    defineColors(event, eType)
+  })
+  // menu.addEventListener('mouseover', (e) => {
+  //   let hover = e.target
+  //   let eType = e.type
+  //   defineColors(hover, eType)
+  // })
   
   // main
   loadJson(jsonPath);

@@ -21,6 +21,7 @@
   --body-bg: #f3f3f3;
   --anime: 0.3s ease-in-out;
   --image-size: 290px;
+  --current-color: var(--mercury-color)
 }
 
 *,
@@ -131,7 +132,7 @@ header > .container-fluent {
   display: block;
   width: 109px;
   height: 36px;
-  font-family: 'Antonio';
+  font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 500;
   font-size: 1.75rem;
@@ -172,16 +173,12 @@ header > .container-fluent {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--mercury-color);
   opacity: 0;
   transition: opacity var(--anime);
 }
-.menu__item #mercury:hover {
-  background: var(--mercury-color);
-}
 .menu__item:hover::before {
+  background-color: var(--current-color);
   opacity: 1;
-  /* background-color: lightcoral; */
 }
 .hamburger {
   display: none;
@@ -352,7 +349,7 @@ header > .container-fluent {
   background: rgba(216, 216, 216, 0.2);
 }
 .btn.active {
-  background-color: var(--mercury-color);
+  background-color: var(--current-color);
 }
 /* background: var(--mercury-color); */
 /* end-hero */
@@ -389,6 +386,6 @@ header > .container-fluent {
   letter-spacing: -1.5px;
   text-transform: uppercase;
 
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 /* end-facts */
