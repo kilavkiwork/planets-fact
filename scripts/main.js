@@ -1,68 +1,59 @@
-import { mobileMenu, hamburger, activeMenu } from './modules/active-menu.js';
-import { bodyClass, testJson } from './modules/module.js';
-import { Planet } from './modules/planet-class.js';
-import { createPlanet } from './modules/current-planet.js';
-import { defineColors } from './modules/define-color.js';
+import { loadData } from './modules/load-data.js';
+import { setData } from './modules/set-data.js';
+import { makePlanet } from './modules/make-planet.js';
+import { makeNames } from './modules/make-names.js';
+import { makeIndex } from './modules/make-index.js';
+import { setImage } from './modules/set-image.js';
+import { setColor } from './modules/set-color.js';
 
-const jsonPath = '../assets/data/data.json';
-const buttons = document.querySelectorAll('button')
-const menu = document.querySelector('.menu')
-// console.log(buttons);
+const jsonPath = 'assets/data/data.json';
+const menuItems = document.querySelectorAll('[data-menu]');
+const buttonsContainer = document.querySelector('.buttons');
+const buttons = buttonsContainer.querySelectorAll('button');
+const namesPlanets = makeNames(menuItems);
+//
 
+// Завантаження даних
+loadData(jsonPath).then((data) => {
+  if (data) {
+    let defaultPlanet = data[0]; // Беремо першу планету
+    let currentPlanet = defaultPlanet; 
+    let buttonName = 'overview';
 
-document.addEventListener('DOMContentLoaded', function () {
-  // завантаження інформації для сайту
-  async function loadJson(jsonFile) {
-    try {
-      const response = await fetch(jsonFile);
-      //
-      if (!response.ok) {
-        throw new Error(`Помилка завантаження даних: ${response.status}`);
-      } 
-      //
-      const data = await response.json();
-      const currentPlanet = createPlanet(data);
-      const planet = new Planet(currentPlanet);
-      const currentBtn = planet.defineButton(buttons)
-      // 
-      planet.addName();
-      planet.addRotation()
-      planet.addRevolution()
-      planet.addRadius()
-      planet.addTemperature()
-      planet.addContent(currentBtn)
-      planet.addImage(currentBtn)
+    setData(currentPlanet, buttonName);
+    setImage(currentPlanet, buttonName);
 
-      // console.log(typeof currentBtn);
-      console.log(currentPlanet);
-      // testJson(data)
-    } catch (error) {
-      console.error('Помилка у "function loadJson()"', error);
-    }
-  }
+    // Додаємо обробники для кнопок одразу
+    buttons.forEach((button) => {
+      button.addEventListener('click', (ev) => {
+        let buttonItem = ev.target;
+        buttonName = buttonItem.value;
 
-  // мобільне меню
-  hamburger.addEventListener('click', activeMenu);
-  //
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      buttons.forEach(button => button.classList.remove('active'))
-      event.target.classList.add('active')
-      loadJson(jsonPath)
-    })
-  })
+        buttons.forEach((item) => item.classList.remove('active'));
+        buttonItem.classList.add('active');
 
-  menu.addEventListener('click', (e) => {
-    let event = e.target;
-    let eType = e.type
-    defineColors(event, eType)
-  })
-  // menu.addEventListener('mouseover', (e) => {
-  //   let hover = e.target
-  //   let eType = e.type
-  //   defineColors(hover, eType)
-  // })
-  
-  // main
-  loadJson(jsonPath);
+        setData(currentPlanet, buttonName);
+        setImage(currentPlanet, buttonName);
+      });
+    });
+
+    menuItems.forEach((item) => {
+      item.addEventListener('click', (ev) => {
+        let menuItem = ev.target;
+        let menuName = menuItem.dataset.menu;
+
+        document.documentElement.id = menuName;
+
+        menuItems.forEach((item) => item.classList.remove('active'));
+        menuItem.classList.add('active');
+        //
+        let currentIndex = makeIndex(namesPlanets, menuName);
+        currentPlanet = makePlanet(data, currentIndex);
+        buttonName = 'overview';
+        setData(currentPlanet, buttonName);
+        setImage(currentPlanet, buttonName);
+        setColor(menuName)
+      });
+    });
+  } // if
 });
