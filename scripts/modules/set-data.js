@@ -11,12 +11,7 @@ function setData(currentPlanet, buttonName) {
     document.querySelector('#content').textContent = currentPlanet[buttonName]['content'];
     document.querySelector('#source').href = currentPlanet[buttonName]['source'];
 
-    // let path = `../assets/images/planet-${currentPlanet['name']}.svg`
-    
     document.querySelector('#planet').src = makePath(currentPlanet, buttonName)
-
-
-    console.log(currentPlanet);
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
   }
