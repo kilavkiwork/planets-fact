@@ -195,7 +195,7 @@ header > .container-fluent {
 [data-menu="neptune"]:hover {
   border-top-color: var(--neptune-color);
 }
-.hamburger {
+#hamburger {
   display: none;
   padding: 16px;
   padding-right: 0;
@@ -203,7 +203,7 @@ header > .container-fluent {
   transition: opacity var(--anime);
   cursor: pointer;
 }
-.hamburger.active {
+#hamburger.active {
   opacity: 1;
 }
 .mobile {
