@@ -1,0 +1,1 @@
+An interactive project that provides key facts about the planets in our Solar System. Users can switch between planets, view images of their surfaces and structures, and learn basic information such as rotation, revolution, and temperature. The design adapts to the selected planet with dynamic colors and responsive layout.
