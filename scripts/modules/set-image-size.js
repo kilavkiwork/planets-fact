@@ -3,7 +3,10 @@ function setImageSize(path, isMain = true) {
     let image = new Image();
     image.onload = () => {
       if (isMain) {
-        document.documentElement.style.setProperty('--image-size', `${image.width}px`);
+        document.documentElement.style.setProperty(
+          '--image-size',
+          `${image.width}px`
+        );
       }
     };
     image.src = path;
@@ -14,14 +17,3 @@ function setImageSize(path, isMain = true) {
 }
 
 export { setImageSize };
-
-// function setImageSize(path) {
-//   let image = new Image();
-//   image.onload = () => {
-//     document.documentElement.style.setProperty(
-//       '--image-size',
-//       `${image.width}px`
-//     );
-//   };
-//   image.src = path;
-// }

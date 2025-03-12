@@ -11,7 +11,7 @@ function makePath(currentPlanet, buttonName) {
           : buttonName
       ];
     let newPath = oldPath.replace('assets/', 'assets/images/');
-    
+
     setImageSize(newPath, buttonName !== 'geology'); // Для geology false
 
     return newPath;
@@ -21,17 +21,3 @@ function makePath(currentPlanet, buttonName) {
 }
 
 export { makePath };
-
-// function makePath(currentPlanet, buttonName) {
-//     let oldPath =
-//       currentPlanet.images[
-//         buttonName === 'overview'
-//           ? 'planet'
-//           : buttonName === 'structure'
-//           ? 'internal'
-//           : buttonName
-//       ];
-//     let newPath = oldPath.replace('assets/', 'assets/images/');
-//     setImageSize(newPath)
-//     return newPath;
-//   }

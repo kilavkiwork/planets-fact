@@ -1,10 +1,12 @@
 function setColor(menuName) {
   try {
-    let colorVar = `--${menuName.toLowerCase()}-color`
-    let color = getComputedStyle(document.documentElement).getPropertyValue(colorVar)
+    let colorVar = `--${menuName.toLowerCase()}-color`;
+    let color = getComputedStyle(document.documentElement).getPropertyValue(
+      colorVar
+    );
 
     if (color) {
-      document.documentElement.style.setProperty('--current-color', color)
+      document.documentElement.style.setProperty('--current-color', color);
     }
     console.log(color);
   } catch (error) {

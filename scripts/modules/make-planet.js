@@ -1,6 +1,6 @@
 function makePlanet(data, currentIndex) {
   try {
-    return data[currentIndex]
+    return data[currentIndex];
     // console.log(data);
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
@@ -8,8 +8,3 @@ function makePlanet(data, currentIndex) {
 }
 
 export { makePlanet };
-
-
-// function createPlanet(data, currentIndex) {
-//   currentPlanet = data[currentIndex]
-// }

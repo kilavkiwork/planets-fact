@@ -19,38 +19,14 @@ function setImage(currentPlanet, buttonName) {
         parentPlanets.removeChild(isGeology);
       }
 
-      document.querySelector('#planet').src = makePath(currentPlanet, buttonName);
+      document.querySelector('#planet').src = makePath(
+        currentPlanet,
+        buttonName
+      );
     }
-    // console.log(newPath);
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
   }
 }
 
 export { setImage };
-
-
-// function setImageSize(path) {
-//   let image = new Image();
-//   image.onload = () => {
-//     document.documentElement.style.setProperty(
-//       '--image-size',
-//       `${image.width}px`
-//     );
-//   };
-//   image.src = path;
-// }
-
-// function makePath(currentPlanet, buttonName) {
-//   let oldPath =
-//     currentPlanet.images[
-//       buttonName === 'overview'
-//         ? 'planet'
-//         : buttonName === 'structure'
-//         ? 'internal'
-//         : buttonName
-//     ];
-//   let newPath = oldPath.replace('assets/', 'assets/images/');
-//   setImageSize(newPath)
-//   return newPath;
-// }

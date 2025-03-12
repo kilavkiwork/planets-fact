@@ -3,7 +3,7 @@ async function loadData(path) {
     const response = await fetch(path);
     if (!response.ok) throw new Error('Data not access');
     const data = await response.json();
-    return data
+    return data;
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
   }

@@ -16,11 +16,12 @@ function activateMenu() {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
 
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    document.body.style.overflow = mobileMenu.classList.contains('active')
+      ? 'hidden'
+      : '';
   } catch (error) {
     console.error('Сталася помилка:', error.message);
   }
 }
 
 export { hamburger, activateMenu };
-

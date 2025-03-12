@@ -1,16 +1,9 @@
 function makeIndex(namesPlanets, menuName) {
   try {
-    return namesPlanets.indexOf(menuName)
-    console.log(currentIndex);
-    
+    return namesPlanets.indexOf(menuName);
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
   }
 }
 
 export { makeIndex };
-
-
-// function defineIndex(menuName) {
-//   currentIndex = namesPlanets.indexOf(menuName)
-// }

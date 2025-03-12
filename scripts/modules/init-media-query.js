@@ -25,7 +25,7 @@ function initMediaQuery() {
     mediaQuery620.addEventListener('change', updateMenu);
     mediaQuery620.addEventListener('change', updateButtonTexts);
     updateMenu(mediaQuery620);
-    updateButtonTexts(mediaQuery620)
+    updateButtonTexts(mediaQuery620);
   } catch (error) {
     console.error('Сталася помилка у: ', error.message);
   }
