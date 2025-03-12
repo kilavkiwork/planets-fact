@@ -1,6 +1,6 @@
 const hamburger = document.querySelector('#hamburger');
-const mobileMenu = document.querySelector('.mobile');
-const menuItems = mobileMenu.querySelectorAll('[data-menu]');
+const mobileMenu = document.querySelector('nav > ul');
+const menuItems = document.querySelectorAll('[data-menu]');
 
 // Додаємо обробник кліку на всі пункти меню (один раз)
 menuItems.forEach((item) => {

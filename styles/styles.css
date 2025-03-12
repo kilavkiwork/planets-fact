@@ -142,14 +142,14 @@ header > .container-fluent {
   text-transform: uppercase;
   color: var(--white);
 }
-.menu {
+#desktop-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 33px;
   /* border: 1px solid salmon; */
 }
-.menu__item {
+#desktop-menu .menu__item {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -165,34 +165,34 @@ header > .container-fluent {
   opacity: 0.75;
   transition: opacity var(--anime), border-top-color var(--anime);
 }
-.menu__item.active {
+#desktop-menu .menu__item.active {
   border-top-color: var(--current-color);
 }
-.menu__item:hover {
+ .menu__item:hover {
   opacity: 1;
 }
-[data-menu="mercury"]:hover {
+#desktop-menu [data-menu="mercury"]:hover {
   border-top-color: var(--mercury-color);
 }
-[data-menu="venus"]:hover {
+#desktop-menu [data-menu="venus"]:hover {
   border-top-color: var(--venus-color);
 }
-[data-menu="earth"]:hover {
+#desktop-menu [data-menu="earth"]:hover {
   border-top-color: var(--earth-color);
 }
-[data-menu="mars"]:hover {
+#desktop-menu [data-menu="mars"]:hover {
   border-top-color: var(--mars-color);
 }
-[data-menu="jupiter"]:hover {
+#desktop-menu [data-menu="jupiter"]:hover {
   border-top-color: var(--jupiter-color);
 }
-[data-menu="saturn"]:hover {
+#desktop-menu [data-menu="saturn"]:hover {
   border-top-color: var(--saturn-color);
 }
-[data-menu="uranus"]:hover {
+#desktop-menu [data-menu="uranus"]:hover {
   border-top-color: var(--uranus-color);
 }
-[data-menu="neptune"]:hover {
+#desktop-menu [data-menu="neptune"]:hover {
   border-top-color: var(--neptune-color);
 }
 #hamburger {
@@ -206,7 +206,7 @@ header > .container-fluent {
 #hamburger.active {
   opacity: 1;
 }
-.mobile {
+#mobile-menu {
   display: none;
   position: fixed;
   top: 68px;
@@ -216,7 +216,7 @@ header > .container-fluent {
   background-color: var(--black);
   z-index: 100;
 }
-.mobile-menu__item {
+#mobile-menu .menu__item {
   position: relative;
   padding: 20px 0 20px 44px;
   font-weight: 700;
@@ -229,13 +229,13 @@ header > .container-fluent {
     no-repeat;
   transition: background var(--anime);
 }
-.mobile-menu__item:hover {
+#mobile-menu .menu__item:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-.mobile-menu__item:not(:last-child) {
+#mobile-menu .menu__item:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.mobile-menu__item::before {
+#mobile-menu .menu__item::before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -246,28 +246,28 @@ header > .container-fluent {
   border-radius: 50%;
   content: '';
 }
-#mercury-mobile::before {
+#mobile-menu [data-menu="mercury"]::before {
   background-color: var(--mercury-color);
 }
-#venus-mobile::before {
+#mobile-menu [data-menu="venus"]::before {
   background-color: var(--venus-color);
 }
-#earth-mobile::before {
+#mobile-menu [data-menu="earth"]::before {
   background-color: var(--earth-color);
 }
-#mars-mobile::before {
+#mobile-menu [data-menu="mars"]::before {
   background-color: var(--mars-color);
 }
-#jupiter-mobile::before {
+#mobile-menu [data-menu="jupiter"]::before {
   background-color: var(--jupiter-color);
 }
-#saturn-mobile::before {
+#mobile-menu [data-menu="saturn"]::before {
   background-color: var(--saturn-color);
 }
-#uranus-mobile::before {
+#mobile-menu [data-menu="uranus"]::before {
   background-color: var(--uranus-color);
 }
-#neptune-mobile::before {
+#mobile-menu [data-menu="neptune"]::before {
   background-color: var(--neptune-color);
 }
 /* end-header */

@@ -68,17 +68,17 @@
     padding: 16px 24px;
   }
   .nav {
-    display: none;
+    /* display: none; */
   }
   #hamburger {
     display: block;
   }
-  .mobile {
+  #mobile-menu {
     display: block;
     left: -100%;
     transition: left 0.5s ease-out;
   }
-  .mobile.active {
+  #mobile-menu.active {
     left: 0;
   }
   .hero > .container {

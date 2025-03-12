@@ -6,6 +6,7 @@ import { makeIndex } from './modules/make-index.js';
 import { setImage } from './modules/set-image.js';
 import { setColor } from './modules/set-color.js';
 import { hamburger, activateMenu } from './modules/activate-menu.js';
+import { initMediaQuery } from './modules/init-media-query.js';
 
 const jsonPath = 'assets/data/data.json';
 const menuItems = document.querySelectorAll('[data-menu]');
@@ -68,3 +69,9 @@ loadData(jsonPath).then((data) => {
 });
 
 hamburger.addEventListener('click', activateMenu)
+<<<<<<< HEAD
+=======
+initMediaQuery() 
+
+
+>>>>>>> mobile
