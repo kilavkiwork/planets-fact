@@ -161,25 +161,39 @@ header > .container-fluent {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--white);
+  border-top: 0.363em solid transparent;
   opacity: 0.75;
-  transition: opacity var(--anime);
+  transition: opacity var(--anime), border-top-color var(--anime);
+}
+.menu__item.active {
+  border-top-color: var(--current-color);
 }
 .menu__item:hover {
   opacity: 1;
 }
-.menu__item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  opacity: 0;
-  transition: opacity var(--anime);
+[data-menu="mercury"]:hover {
+  border-top-color: var(--mercury-color);
 }
-.menu__item:hover::before {
-  background-color: var(--current-color);
-  opacity: 1;
+[data-menu="venus"]:hover {
+  border-top-color: var(--venus-color);
+}
+[data-menu="earth"]:hover {
+  border-top-color: var(--earth-color);
+}
+[data-menu="mars"]:hover {
+  border-top-color: var(--mars-color);
+}
+[data-menu="jupiter"]:hover {
+  border-top-color: var(--jupiter-color);
+}
+[data-menu="saturn"]:hover {
+  border-top-color: var(--saturn-color);
+}
+[data-menu="uranus"]:hover {
+  border-top-color: var(--uranus-color);
+}
+[data-menu="neptune"]:hover {
+  border-top-color: var(--neptune-color);
 }
 .hamburger {
   display: none;

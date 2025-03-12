@@ -42,6 +42,7 @@ loadData(jsonPath).then((data) => {
         let menuItem = ev.target;
         let menuName = menuItem.dataset.menu;
 
+        // Додаємо глобальну назву планети
         document.documentElement.id = menuName;
 
         menuItems.forEach((item) => item.classList.remove('active'));
