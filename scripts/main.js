@@ -69,9 +69,6 @@ loadData(jsonPath).then((data) => {
 });
 
 hamburger.addEventListener('click', activateMenu)
-<<<<<<< HEAD
-=======
 initMediaQuery() 
 
 
->>>>>>> mobile
