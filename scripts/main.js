@@ -17,7 +17,7 @@ const namesPlanets = makeNames(menuItems);
 loadData(jsonPath).then((data) => {
   if (data) {
     let defaultPlanet = data[0]; // Беремо першу планету
-    let currentPlanet = defaultPlanet; 
+    let currentPlanet = defaultPlanet;
     let buttonName = 'overview';
 
     setData(currentPlanet, buttonName);
@@ -50,9 +50,16 @@ loadData(jsonPath).then((data) => {
         let currentIndex = makeIndex(namesPlanets, menuName);
         currentPlanet = makePlanet(data, currentIndex);
         buttonName = 'overview';
+
+        // Очищаємо активний стан кнопок
+        buttons.forEach((button) => button.classList.remove('active'));
+
+        // Робимо кнопку "Overview" активною (припустимо, це перша кнопка)
+        buttons[0].classList.add('active');
+
         setData(currentPlanet, buttonName);
         setImage(currentPlanet, buttonName);
-        setColor(menuName)
+        setColor(menuName);
       });
     });
   } // if
